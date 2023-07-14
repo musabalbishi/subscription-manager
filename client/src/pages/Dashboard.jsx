@@ -3,14 +3,15 @@ import { BiSearch, BiCube, BiSolidBadgeDollar } from "react-icons/bi";
 import { PiPercent, PiPlusCircleDuotone, PiX } from "react-icons/pi";
 import StatsCard from "../components/StatsCard";
 import SubTable from "../components/SubTable";
+import FormikForm from "../components/FormikForm";
 
 const Dashboard = () => {
   const [search, setSearch] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col flex-grow min-h-full">
       {/* some stats */}
-      <div className="flex flex-wrap justify-between gap-4 mb-4">
+      <div className="flex justify-between gap-4 mb-4 z-0">
         <StatsCard
           title={"Subscriptions"}
           stat={"11 Subscriptions"}
@@ -22,11 +23,15 @@ const Dashboard = () => {
           icon={<BiSolidBadgeDollar size={"1.5rem"} color="green" />}
         />
         <StatsCard
+          title={"Yearly payment"}
+          stat={"$3333.34"}
+          icon={<PiPercent size={"1.5rem"} />}
+        />
+        <StatsCard
           title={"Average"}
           stat={"$33.34"}
           icon={<PiPercent size={"1.5rem"} />}
         />
-        <StatsCard />
       </div>
       {/* subscriptions */}
       <div className="flex items-start w-full bg-white rounded-lg h-[25rem] p-6">
@@ -37,17 +42,17 @@ const Dashboard = () => {
               <input
                 type="text"
                 placeholder="search"
-                className={search ? "bg-slate-100s rounded-lg p-2" : "hidden"}
+                className={search ? "bg-slate-100 rounded-lg p-2" : "hidden"}
               />
               <button
                 onClick={() => setSearch(!search)}
-                className="bg-slate-200 p-2 rounded-lg"
+                className="bg-slate-200 hover:bg-slate-400 duration-300 hover:-translate-y-0.5 p-2 rounded-lg"
               >
                 <BiSearch size={"1.5rem"} />
               </button>
               <button
                 onClick={() => setOpenModal(true)}
-                className="bg-slate-200 p-2 rounded-lg"
+                className="bg-slate-200  hover:bg-slate-400 duration-300 hover:-translate-y-0.5 p-2 rounded-lg"
               >
                 <PiPlusCircleDuotone size={"1.5rem"} />
               </button>
@@ -61,13 +66,17 @@ const Dashboard = () => {
           <div
             className={
               openModal
-                ? "bg-green-100 w-40 h-40 rounded-lg fixed top-1/2 left-1/2"
+                ? "w-[40rem] p-3 bg-gray-500 rounded-lg fixed top-24 left-1/5 z-10"
                 : "hidden"
             }
           >
-            <button onClick={() => setOpenModal(false)}>
+            <button
+              onClick={() => setOpenModal(false)}
+              className="hover:bg-gray-100 duration-300 text-white hover:text-[#333] p-1 rounded-lg"
+            >
               <PiX size={"1.5rem"} />
             </button>
+            <FormikForm />
           </div>
         </div>
       </div>

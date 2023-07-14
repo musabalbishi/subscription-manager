@@ -12,7 +12,11 @@ export default {
       lg: "1440px",
       // => @media (min-width: 1440px) { ... }
     },
-    extend: {},
+    extend: {
+      gridTemplateColumns: {
+        footer: "17rem minmax(50rem, 1fr)",
+      },
+    },
   },
   plugins: [],
 };

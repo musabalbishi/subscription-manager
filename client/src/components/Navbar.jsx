@@ -1,5 +1,5 @@
 import { BiMenuAltLeft, BiUser } from "react-icons/bi";
-
+import { PiSun } from "react-icons/pi";
 const Navbar = () => {
   return (
     <nav className="bg-white h-20 p-4 px-12 mb-4 flex justify-between items-center">
@@ -13,8 +13,13 @@ const Navbar = () => {
         <BiMenuAltLeft color="#444" />
       </div>
       {/*  */}
-      <div className="hover:bg-gray-100 cursor-pointer p-1 rounded-lg transition-all duration-300">
-        <BiUser color="#444" size={"1.5rem"} />
+      <div className="flex items-center gap-3">
+        <div className="hover:bg-gray-100 cursor-pointer p-1 rounded-lg transition-all duration-300">
+          <PiSun color="#444" size={"1.5rem"} />
+        </div>
+        <div className="hover:bg-gray-100 cursor-pointer p-1 rounded-lg transition-all duration-300">
+          <BiUser color="#444" size={"1.5rem"} />
+        </div>
       </div>
     </nav>
   );

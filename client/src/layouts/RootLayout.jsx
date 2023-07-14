@@ -4,9 +4,9 @@ import Sidebar from "../components/Sidebar";
 
 const RootLayout = () => {
   return (
-    <div className="bg-slate-200 h-screen overflow-hidden">
+    <div className="bg-slate-200 h-screen">
       <Navbar />
-      <div className="flex px-12 gap-6 h-full">
+      <div className="grid grid-cols-footer px-12">
         <Sidebar />
         <Outlet />
       </div>

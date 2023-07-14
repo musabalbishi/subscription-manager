@@ -4,7 +4,7 @@ import { PiChartBarDuotone, PiCalendar } from "react-icons/pi";
 import { NavLink } from "react-router-dom";
 const Sidebar = () => {
   return (
-    <aside className="bg-white py-4 h-[84%] w-60 rounded-lg">
+    <aside className="bg-white py-4 w-60 rounded-lg">
       <div className="flex flex-col">
         <NavLink to={"/"}>
           <div className="flex gap-2 items-center px-4 py-2 mx-2 hover:bg-gray-100 cursor-pointer transition-all duration-300 focus:bg-gray-200 rounded-md">
