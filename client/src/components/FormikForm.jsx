@@ -4,6 +4,8 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { Dropdown } from "primereact/dropdown";
 import { Calendar } from "primereact/calendar";
+import { InputNumber } from "primereact/inputnumber";
+
 // import { Dialog } from "primereact/dialog";
 import { classNames } from "primereact/utils";
 
@@ -96,7 +98,12 @@ function FormikForm() {
             {/* value */}
             <div className="mb-5 flex-grow">
               <span className="p-float-label p-input-icon-right">
-                <InputText
+                <div className="p-inputgroup">
+                  <span className="p-inputgroup-addon">$</span>
+                  <InputNumber placeholder="Price" />
+                  <span className="p-inputgroup-addon">.00</span>
+                </div>
+                {/* <InputNumber
                   id="value"
                   name="value"
                   value={formik.values.email}
@@ -104,7 +111,7 @@ function FormikForm() {
                   className={classNames({
                     "p-invalid": isFormFieldValid("email"),
                   })}
-                />
+                /> */}
                 <label
                   htmlFor="email"
                   className={classNames({
