@@ -3,7 +3,7 @@ import { BiSearch, BiCube, BiSolidBadgeDollar } from "react-icons/bi";
 import { PiPercent, PiPlusCircleDuotone, PiX } from "react-icons/pi";
 import StatsCard from "../components/StatsCard";
 import SubTable from "../components/SubTable";
-import FormikForm from "../components/FormikForm";
+import SubForm from "../components/SubForm";
 
 const Dashboard = () => {
   const [search, setSearch] = useState(false);
@@ -76,7 +76,8 @@ const Dashboard = () => {
             >
               <PiX size={"1.5rem"} />
             </button>
-            <FormikForm />
+            {/* subscription form */}
+            <SubForm />
           </div>
         </div>
       </div>

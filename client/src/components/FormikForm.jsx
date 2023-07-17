@@ -98,28 +98,7 @@ function FormikForm() {
             {/* value */}
             <div className="mb-5 flex-grow">
               <span className="p-float-label p-input-icon-right">
-                <div className="p-inputgroup">
-                  <span className="p-inputgroup-addon">$</span>
-                  <InputNumber placeholder="Price" />
-                  <span className="p-inputgroup-addon">.00</span>
-                </div>
-                {/* <InputNumber
-                  id="value"
-                  name="value"
-                  value={formik.values.email}
-                  onChange={formik.handleChange}
-                  className={classNames({
-                    "p-invalid": isFormFieldValid("email"),
-                  })}
-                /> */}
-                <label
-                  htmlFor="email"
-                  className={classNames({
-                    "p-error": isFormFieldValid("email"),
-                  })}
-                >
-                  Value*{" "}
-                </label>
+                {/* <InputNumber placeholder="Price" /> */}
               </span>
               {getFormErrorMessage("email")}
             </div>
