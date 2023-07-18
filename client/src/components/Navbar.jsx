@@ -5,7 +5,7 @@ import { PiSun, PiSignOut, PiUserCircle } from "react-icons/pi";
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(false);
   return (
-    <nav className="bg-white h-20 p-4 px-12 mb-4 flex justify-between items-center">
+    <nav className="bg-white h-20 p-4 px-12 flex justify-between items-center">
       {/* logo */}
       <div className="flex items-center">
         <div className="w-[20%]">

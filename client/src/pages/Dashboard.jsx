@@ -66,7 +66,7 @@ const Dashboard = () => {
           <div
             className={
               openModal
-                ? "w-[40rem] p-3 bg-gray-500 rounded-lg fixed top-24 left-1/5 z-10"
+                ? "w-[45rem] p-3 bg-gray-500 rounded-lg fixed top-10 left-1/4 z-10"
                 : "hidden"
             }
           >

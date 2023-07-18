@@ -6,3 +6,13 @@
   background-color: rgb(243 244 246);
   border-radius: 0.75rem;
 }
+
+label {
+  margin: 0.3rem 0;
+}
+
+@layer utilities {
+  .poly {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 12vw));
+  }
+}
