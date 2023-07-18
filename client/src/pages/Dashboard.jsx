@@ -3,7 +3,7 @@ import { BiSearch, BiCube, BiSolidBadgeDollar } from "react-icons/bi";
 import { PiPercent, PiPlusCircleDuotone, PiX } from "react-icons/pi";
 import StatsCard from "../components/StatsCard";
 import SubTable from "../components/SubTable";
-import SubForm from "../components/SubForm";
+import SubForm from "../components/forms/SubForm";
 
 const Dashboard = () => {
   const [search, setSearch] = useState(false);

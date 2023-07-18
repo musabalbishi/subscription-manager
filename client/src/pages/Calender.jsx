@@ -1,4 +1,4 @@
-import EventsCalender from "../components/EventsCalender";
+import EventsCalender from "../components/calender/EventsCalender";
 
 const Calender = () => {
   return (
