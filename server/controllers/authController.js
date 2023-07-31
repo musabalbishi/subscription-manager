@@ -1,18 +1,10 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
-const { validateInputs } = require("../validations/validator");
 
 module.exports = {
   // signup
   signup: async (req, res) => {
     const { username, email, phone, password } = req.body;
-
-    // validate the inputs
-    const { error, value } = validateInputs(req.body);
-    if (error) {
-      console.log(error);
-      return res.send(error.details);
-    }
 
     // check if email already exist
     const emailExists = await User.exists({ email });
@@ -20,9 +12,10 @@ module.exports = {
       return res.status(400).json({ errorMessage: "email already exist" });
 
     // hash the password
-    const salt = await bcrypt.genSalt(10);
+    const salt = await bcrypt.genSalt();
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    // create the user
     const user = await User.create({
       username,
       email,
@@ -34,14 +27,22 @@ module.exports = {
 
   //   login
   login: async (req, res) => {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username, password });
+    const { email, password } = req.body;
 
-    if (user) {
+    const user = await User.findOne({ email });
+
+    // check if the use exist
+    if (!user)
+      return res
+        .status(400)
+        .json({ errorMessage: "email or password is Invalid" });
+
+    // decrypt the passwird
+    try {
+      await bcrypt.compare(password, user.password);
       res.status(200).json({ foudUser: user });
-    }
-    if (!user) {
-      res.status(400).json({ errorMessage: "username or password is Invalid" });
+    } catch (error) {
+      res.status(500).json({ errorMessage: error });
     }
   },
 };
