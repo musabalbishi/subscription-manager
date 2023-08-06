@@ -7,4 +7,7 @@ router.post("/signup", validate.signupValidation, controller.signup);
 // login
 router.post("/login", validate.loginValidation, controller.login);
 
+// logout
+router.delete("/logout", controller.logout);
+
 module.exports = router;

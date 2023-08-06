@@ -9,6 +9,7 @@ exports.loginValidation = (req, res, next) => {
     return res.status(400).json({ errorMessage: error.details[0].message });
   next();
 };
+
 exports.signupValidation = (req, res, next) => {
   const body = req.body;
   const { error } = schemas.signup.validate(body, {
