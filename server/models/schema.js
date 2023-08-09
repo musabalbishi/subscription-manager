@@ -12,4 +12,14 @@ const login = Joi.object({
   password: Joi.string().min(6).required(),
 });
 
-module.exports = { login, signup };
+const subscription = Joi.object({
+  subscriptionName: Joi.string(),
+  value: Joi.number().min(1).required(),
+  cycle: Joi.string().required(),
+  startDate: Joi.string().required(),
+  alertNotice: Joi.string().required(),
+  alertType: Joi.string().required(),
+  isActive: Joi.boolean(),
+});
+
+module.exports = { login, signup, subscription };

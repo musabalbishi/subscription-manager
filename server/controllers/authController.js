@@ -29,7 +29,7 @@ module.exports = {
     res.status(201).json({ newUser: user });
   }),
 
-  //   login
+  // login
   login: asyncHandler(async (req, res, next) => {
     const { email, password } = req.body;
     //
@@ -41,14 +41,15 @@ module.exports = {
     if (!cmparedPassword)
       return next(new ApiError("email or password is Invalid", 401));
     // assign the token
-    const token = JWT.sign({ user }, config.SECRET, { expiresIn: "1h" });
+    const token = JWT.sign({ user }, config.ACCESS_TOKEN_SECRET, {
+      expiresIn: "1h",
+    });
     // store the token in a cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
+      secure: false,
     });
-    //PS: exclude the password from bieng sent
-    res.status(200).json({ foudUser: user, token: token });
+    res.status(200).json({ foudUser: user, accessToken: token });
   }),
 
   // logout
